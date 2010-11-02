@@ -154,6 +154,14 @@ class Site {
         $this->response->render("page-formats", $options);
     }
 
+    function action_about_google() {
+        $options = array(
+                "title" => "google subscription",
+                "links" => $this->get_default_links(),
+        );
+        $this->response->render("page-google", $options);
+    }
+
     function action_page_reverse() {
         $options = array(
                 "title" => "reverse lookup API",
@@ -357,19 +365,16 @@ class Site {
         $all_namespaces = $this->namespaces->get_all();
         require_once "lib/rss2_feed_with_namespaces.class.php";
         $feed = new RSS2FeedWithNamespaces();
-        $feed->title = "prefix.cc namespaces";
+        $feed->title = "prefix.cc";
         $feed->link = "http://prefix.cc/";
-        $feed->description = "A feed containing all prefix.cc namespace mappings, intended for use as Google Subscribed Links";
+        $feed->description = " | Namespace lookup for RDF developers";
         $feed->syndicationURL = $this->response->absolute('google-coop.rss');
         $feed->namespaces['coop'] = 'http://www.google.com/coop/namespace';
         foreach ($all_namespaces as $ns) {
             $item = new FeedItem();
             $item->title = "“$ns[prefix]” namespace via prefix.cc";
             $item->link = $ns['uri'];
-            $item->description = "<p>This is a prefix mapping for the <strong>$ns[prefix]</strong> prefix. "
-                . "Its expansion is <a href=\"" . htmlspecialchars($ns['uri']) . "\">" . htmlspecialchars($ns['uri']) . "</a>. "
-                . "For details, see <a href=\"http://prefix.cc/$ns[prefix]\">prefix.cc/$ns[prefix]</a>.</p>";
-            $item->descriptionHtmlSyndicated = true;
+            $item->description = $ns['uri'];
             $item->additionalElements['coop:keyword'] = $ns['prefix'];
             $feed->addItem($item);
         }
