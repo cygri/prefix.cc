@@ -1,0 +1,208 @@
+* {
+    line-height: 1.35em;
+}
+body {
+    color: #888;
+    font: 1em 'Lucida Grande',sans-serif;
+    margin: 1em 10%;
+    text-align: center;
+}
+a {
+    color: #77f;
+    text-decoration: none;
+}
+a:hover {
+    color: #ff731e;
+    text-decoration: underline;
+}
+small {
+    font-size: 80%;
+}
+code {
+    font-size: 120%;
+}
+a img {
+    border: none;
+}
+.hidden {
+    display: none;
+}
+.title {
+    height: 3em;
+    margin: 5.5em 0 2.5em;
+}
+.title h1 {
+    font-size: 2em;
+    margin: 0;
+}
+.note strong {
+    color: #b33;
+}
+.content {
+    min-height: 5em;
+    margin: 2.5em 0 5em;
+}
+.content h2 {
+    color: #333;
+    font-size: 2em;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+.content h2 a {
+    color: #333;
+}
+.content h2 a:hover {
+    text-decoration: none;
+}
+.footer {
+    color: #333;
+    margin: 5em 0 2em;
+}
+.footer .message {
+    color: #888;
+}
+.footer .message span {
+    padding: 0 0.4em;
+}
+.footer a {
+    letter-spacing: 0.1em;
+    padding: 0 0.4em;
+}
+h2.alternate {
+    color: #888;
+}
+.vote {
+    color: #888;
+    font-size: 10px;
+    position: relative;
+}
+.vote.up {
+    top: -19px;
+}
+.vote.down {
+    left: -25px;
+}
+.vote img {
+    vertical-align: bottom;
+}
+.namespace-link {
+    position: relative;
+    bottom: -3px;
+}
+#button-show-form {
+    cursor: pointer;
+    margin-top: 0.2em;
+}
+.examples {
+    margin-top: 0.7em;
+}
+.examples a {
+    padding: 0 0.3em;
+}
+.popular {
+    color: #333;
+    margin: 0 auto;
+    padding-left: 2.5em;
+    text-align: left;
+    width: 4em;
+}
+.missing, .alternate {
+    color: #888;
+}
+.title.home {
+    height: 5em;
+}
+.page-about {
+    margin: 4em auto -1em;
+    width: 34em;
+}
+.page-about h1 {
+    font-size: 1.6em;
+    margin-bottom: 2em;
+}
+.page-about h2 {
+    font-size: 1em;
+}
+.page-about p, .page-about li, .page-about h2 {
+    text-align: left;
+}
+.page-about table { border-collapse: collapse; }
+.page-about td, .page-about th { margin: 0; padding: 0; }
+.page-about th { text-align: left; }
+.page-about th#format { padding-right: 1.5em; }
+table.multi {
+    margin: 5.5em auto 5em;
+}
+table.multi th, table.multi td {
+    font-size: 1.6em;
+}
+table.multi a {
+    color: #333;
+    text-decoration: none;
+}
+.missing a {
+    color: #888;
+}
+th {
+    padding-right: 1em;
+    text-align: right;
+}
+td {
+    text-align: left;
+}
+pre.source {
+    display: table;
+    font-size: 1.6em;
+    margin: 3em auto -2em;
+    text-align: left;
+}
+pre.source.rdfa {
+    font-size: 1.2em;
+}
+#declaration-form {
+    margin-top: 0.2em;
+}
+#declaration-form input.uri {
+    color: #333;
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+input.home {
+    color: #333;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.page-latest h1 {
+    margin: 1em 0 1em;
+}
+.page-latest table {
+    margin: -1em auto 0;
+}
+.page-latest td, .page-latest th {
+    padding-bottom: 0;
+}
+.page-latest td.meta {
+    font-size: 80%;
+    padding-bottom: 1em;
+    padding-top: 0;
+}
+.page-latest table a {
+    color: #333;
+    text-decoration: none;
+}
+.page-latest .feed-link {
+    margin: 0 auto -4em;
+}
+#logos {
+    bottom: 10px;
+    left: 15px;
+    position: fixed;
+    z-index: -1;
+}
+#logos img {
+    vertical-align: bottom;
+}
+#logos #deri-logo {
+    margin-left: 8px;
+}
