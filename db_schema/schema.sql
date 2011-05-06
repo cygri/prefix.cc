@@ -48,9 +48,11 @@ CREATE TABLE `prefixcc_namespaces` (
   `uri` varchar(100) character set utf8 collate utf8_bin NOT NULL,
   `date` datetime NOT NULL,
   `ip` varchar(15) NOT NULL,
-  `votes` int(11) NOT NULL default '0',
+  `upvotes` int(11) NOT NULL default '0',
+  `downvotes` int(11) NOT NULL default '0',
   PRIMARY KEY  (`prefix`,`uri`),
-  KEY `votes` (`votes`),
+  KEY `upvotes` (`upvotes`),
+  KEY `downvotes` (`downvotes`),
   KEY `date` (`date`),
   KEY `uri` (`uri`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
