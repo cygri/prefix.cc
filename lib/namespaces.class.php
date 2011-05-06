@@ -160,7 +160,8 @@ class Namespaces {
         if (!$this->is_valid_namespace_URI($uri)) {
             throw new Exception("not a valid namespace URI: '$uri'");
         }
-        $sql = sprintf("INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('%s', '%s', NOW(), '%s', 5, 0)", $this->escape($prefix), $this->escape($uri), $this->escape($_SERVER['REMOTE_ADDR']));
+        $ip = empty($_SERVER['REMOTE_ADDR']) ? '127.0.0.1' : $_SERVER['REMOTE_ADDR'];
+        $sql = sprintf("INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('%s', '%s', NOW(), '%s', 5, 0)", $this->escape($prefix), $this->escape($uri), $this->escape($ip));
         $this->execute($sql);
     }
 
