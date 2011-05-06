@@ -154,6 +154,14 @@ class Site {
         $this->response->render("page-formats", $options);
     }
 
+    function action_about_api() {
+        $options = array(
+                "title" => "namespace lookup api",
+                "links" => $this->get_default_links(),
+        );
+        $this->response->render("page-api", $options);
+    }
+
     function action_about_google() {
         $options = array(
                 "title" => "google subscription",

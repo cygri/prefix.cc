@@ -39,6 +39,9 @@ if ($q = $request->matches('/^(robots|favicon)/')) {
 } else if ($q = $request->matches('/^about\/google$/')) {
     $request->enforce_get();
     $site->action_about_google();
+} else if ($q = $request->matches('/^about\/api$/')) {
+    $request->enforce_get();
+    $site->action_about_api();
 } else if ($q = $request->matches("/^popular(\/all)?(\.$extensions_regex)?$/")) {
     $request->enforce_get();
     $site->action_popular(!empty($q[1]), @$q[3] . @$q[6], !empty($q[4]) || !empty($q[5]));

@@ -11,6 +11,7 @@
     <h2>Further documentation</h2>
     <ul>
       <li><a href="about/formats">List of all supported output formats</a></li>
+      <li><a href="about/api">Namespace lookup API</a></li>
       <li><a href="reverse">Reverse lookup API</a></li>
       <li><a href="about/google">Google custom search result subscription</a></li>
     </ul>
