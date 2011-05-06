@@ -4,7 +4,7 @@ echo '<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD X
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
   <title>site maintenance | prefix.cc</title>
-  <base href="http://localhost/prefix.cc/" />
+  <base href="http://prefix.cc/" />
   <style type="text/css">
 <?php readfile('style.css'); ?>
   </style>
@@ -15,7 +15,7 @@ echo '<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD X
   </div>
   <div class="footer">
     <span class="message"><span>prefix.cc is undergoing site maintenance. Please check back later.</span> | </span>
-    <a rel="home" href="http://localhost/prefix.cc/">prefix.cc</a>
+    <a rel="home" href="http://prefix.cc/">prefix.cc</a>
   </div>
 </body>
 </html>

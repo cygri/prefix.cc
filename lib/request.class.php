@@ -6,10 +6,6 @@ class Request {
 
     function __construct() {
         $uri = substr($_SERVER['REQUEST_URI'], 1);
-        if (preg_match('!^prefix.cc/(.*)$!', $uri, $match)) {
-            // in my development setup, the site runs at http://localhost/prefix.cc/
-            $uri = $match[1];
-        }
         $this->uri = $uri;
         preg_match('/([^\?]*)(\?.*)?$/', $uri, $match);
         $this->path = $match[1];
