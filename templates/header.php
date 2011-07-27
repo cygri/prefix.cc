@@ -10,6 +10,7 @@
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
   >
 <head about="<?php e($page_uri); ?>" profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <title property="dc:title"><?php e($title); ?> | prefix.cc</title>
   <base href="<?php e($base); ?>" />
   <link rel="stylesheet" href="style.css" type="text/css" />
