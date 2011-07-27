@@ -304,12 +304,27 @@ class Site {
     }
 
     function action_reverse($uri, $format = null) {
-        if (!preg_match('!^(.*?)([^/#:]*)$!', $uri, $match)) {
-            $this->response->error(404);
+        $prefix = null;
+        // On search for http://example.com/ns, check whether
+        // http://example.com/ns# is defined
+        if (!preg_match('![/#:]$!', $uri)) {
+            $with_hash = "$uri#";
+            $prefix = $this->namespaces->reverse_lookup($with_hash);
+            if ($prefix) {
+                $uri = $with_hash;
+                $reference = null;
+            }
         }
-        $uri = $match[1];
-        $reference = $match[2];
-        $prefix = $this->namespaces->reverse_lookup($uri);
+        // Split http://example.com/ns#something into
+        // "http://example.com/ns#" and (potentially empty) "something"
+        if (!$prefix) {
+            if (!preg_match('!^(.*?)([^/#:]*)$!', $uri, $match)) {
+                $this->response->error(404);
+            }
+            $uri = $match[1];
+            $reference = $match[2];
+            $prefix = $this->namespaces->reverse_lookup($uri);
+        }
         if (!$prefix) {
             $this->response->error(404, array('title' => 'no registered prefix', 'message' => 'To add a new mapping, search for the desired prefix on the homepage.'));
         }
