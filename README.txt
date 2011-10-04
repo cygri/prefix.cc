@@ -69,3 +69,6 @@ Ideas/Improvements
   somewhere else
     http://prefix.cc/all
     http://prefix.cc/all.ttl
+- Add reverse lookup from term URIs to CURIEs – currently the reverse
+  lookup only allows reversal of “naked” namespace URIs without a
+  local part
