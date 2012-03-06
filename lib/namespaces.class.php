@@ -132,7 +132,7 @@ class Namespaces {
         // Not sure if this is quite correct. At least one alphanumeric
         // character, must start and end alphanumeric, might contain dash
         $domainpart = "([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)";
-        return preg_match("!^http://$domainpart(\.$domainpart)+(:[0-9]+)?/([\!$&'()*+,;=._~?/:@%0-9a-zA-Z-]*[/#:])?$!", $uri);
+        return preg_match("!^https?://$domainpart(\.$domainpart)+(:[0-9]+)?/([\!$&'()*+,;=._~?/:@%0-9a-zA-Z-]*[/#:])?$!", $uri);
     }
 
     function get_prefix_regex() {
