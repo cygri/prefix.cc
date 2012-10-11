@@ -40,6 +40,7 @@ $ php scripts/import.php prefix.cc
 Ideas/Improvements
 ------------------
 
+- Get some inspiration from http://whatnamespace.net/
 - Add a "copy to clipboard" button, perhaps big in the top left corner
   based on http://code.google.com/p/zeroclipboard
 - All literals have @en; not really appropriate!
