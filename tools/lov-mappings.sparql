@@ -1,0 +1,17 @@
+# Returns namespace mappings from LOV where the URI doesn't exist yet
+# in prefix.cc, and the prefix is unassigned in prefix.cc.
+# Run with Jena: sparql --query lov-mappings.sparql --results csv > out.csv
+# Then import with csv-import.php
+PREFIX vann: <http://purl.org/vocab/vann/>
+SELECT ?prefix ?URI
+FROM <http://prefix.cc/popular/all.file.vann> {
+  SERVICE <http://lov.okfn.org/endpoint/lov> {
+    SELECT ?prefix ?URI {
+      [] vann:preferredNamespacePrefix ?prefix;
+        vann:preferredNamespaceUri ?URI;
+    }
+  }
+  FILTER(NOT EXISTS { [] vann:preferredNamespaceUri ?URI })
+  FILTER(NOT EXISTS { [] vann:preferredNamespacePrefix ?prefix })
+}
+ORDER BY ?prefix
