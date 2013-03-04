@@ -6,8 +6,10 @@
   Reads a CSV file with prefix mappings, and generates SQL commands that can
   be run against the live prefix.cc database to import the mappings.
 
-  The CSV file needs two columns, prefix and URI. No column headings. Example:
+  The CSV file needs two columns, prefix and URI. The first row is assumed
+  to contain a column header and will be ignored. Example:
 
+    prefix,URI
     foo,http://example.com/foo#
     bar,"http://example.com/bar,baz#"
 
@@ -44,6 +46,7 @@ $prefixes = array();
 $total_invalid = 0;
 foreach ($lines as $i => $line) {
   $line_number = $i + 1;
+  if ($line_number == 1) continue;  // Skip header
   $parsed = str_getcsv($line);
   if (count($parsed) != 2) {
     die("Wrong number of columns in line $line_number (should be 2 columns)\n");
