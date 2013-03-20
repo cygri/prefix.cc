@@ -76,6 +76,7 @@ if ($total_invalid > 0) {
   die("There were invalid mappings. Aborting.\n");
 }
 $lookup_url = "http://prefix.cc/" . join($prefixes, ",");
+@date_default_timezone_set(@date_default_timezone_get());
 $date = date("Y-m-d");
 echo "# Mappings for insertion into the prefix.cc database\n";
 echo "# Generated on $date from $filename\n";
