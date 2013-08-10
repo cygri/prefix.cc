@@ -1,0 +1,3 @@
+Clipboard icon:
+Elusive-Iconfont by Aristeides Stathopoulos (SIL licenced)
+https://github.com/aristath/elusive-iconfont
