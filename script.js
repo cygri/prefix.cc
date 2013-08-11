@@ -84,14 +84,18 @@ function setUpCopyButton() {
   ZeroClipboard.setDefaults({ moviePath: "/zeroclipboard.swf", forceHandCursor: true });
   $('.uri').each(function () {
     var $uri = $(this);
-    $uri.prepend(createCopyButton($uri.text()), ' ');
+    $uri.prepend(createCopyButton($uri.text(), ' '));
+  });
+  $('pre.source').each(function () {
+    $('.footer').prepend($('<p>').append(createCopyButton($(this).text().trim(),
+                                                          ' Copy this snippet to the clipboard')));
   });
 }
 
-function createCopyButton(text) {
-  var $copy = $('<img>').attr({ 'src': 'images/clipboard.png',
-                                'title': 'Copy the URI to the clipboard',
-                                'data-clipboard-text': text });
+function createCopyButton(copyText, caption) {
+  var $copy = $('<span>').attr({ 'class': 'copy', 'data-clipboard-text': copyText })
+                         .append($('<img>').attr({ 'title': 'Copy the URI to the clipboard',
+                                                   'src': 'images/clipboard.png' }), caption);
   new ZeroClipboard($copy);
   return $copy;
 }
