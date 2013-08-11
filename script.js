@@ -4,6 +4,7 @@ $(document).ready(function() {
     setUpVoteLinks();
     setUpDeclarationForm();
     setUpExpansions();
+    setUpCopyButton();
 });
 
 function setUpVoteLinks() {
@@ -78,3 +79,19 @@ function setUpExpansions() {
     );
 }
 
+
+function setUpCopyButton() {
+  ZeroClipboard.setDefaults({ moviePath: "/zeroclipboard.swf", forceHandCursor: true });
+  $('.uri').each(function () {
+    var $uri = $(this);
+    $uri.prepend(createCopyButton($uri.text()), ' ');
+  });
+}
+
+function createCopyButton(text) {
+  var $copy = $('<img>').attr({ 'src': 'images/clipboard.png',
+                                'title': 'Copy the URI to the clipboard',
+                                'data-clipboard-text': text });
+  new ZeroClipboard($copy);
+  return $copy;
+}
