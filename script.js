@@ -4,7 +4,7 @@ $(document).ready(function() {
     setUpVoteLinks();
     setUpDeclarationForm();
     setUpExpansions();
-    setUpCopyButton();
+    setUpCopyButtons();
 });
 
 function setUpVoteLinks() {
@@ -80,16 +80,18 @@ function setUpExpansions() {
 }
 
 
-function setUpCopyButton() {
-  ZeroClipboard.setDefaults({ moviePath: "/zeroclipboard.swf", forceHandCursor: true });
-  $('.uri:not(.nocopy)').each(function () {
-    var $uri = $(this);
-    $uri.prepend(createCopyButton($uri.text(), ' '));
-  });
-  $('pre.source').each(function () {
-    $('.footer').prepend($('<p>').append(createCopyButton($(this).text().trim(),
-                                                          ' Copy this snippet to the clipboard')));
-  });
+function setUpCopyButtons() {
+  if (ZeroClipboard.detectFlashSupport()) {
+    ZeroClipboard.setDefaults({ moviePath: "/zeroclipboard.swf", forceHandCursor: true });
+    $('.uri:not(.nocopy)').each(function () {
+      var $uri = $(this);
+      $uri.prepend(createCopyButton($uri.text(), ' '));
+    });
+    $('pre.source').each(function () {
+      $('.footer').prepend($('<p>').append(createCopyButton($(this).text().trim(),
+                                                            ' Copy this snippet to the clipboard')));
+    });
+  }
 }
 
 function createCopyButton(copyText, caption) {
