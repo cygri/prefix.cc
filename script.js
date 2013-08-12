@@ -82,10 +82,10 @@ function setUpExpansions() {
 
 function setUpCopyButtons() {
   if (ZeroClipboard.detectFlashSupport()) {
-    ZeroClipboard.setDefaults({ moviePath: "/zeroclipboard.swf", forceHandCursor: true });
+    ZeroClipboard.setDefaults({ moviePath: "/zeroclipboard.swf", forceHandCursor: true, hoverClass: 'hover' });
     $('.uri:not(.nocopy)').each(function () {
       var $uri = $(this);
-      $uri.prepend(createCopyButton($uri.text(), ' '));
+      $uri.prepend(createCopyButton($uri.text()), ' ');
     });
     $('pre.source').each(function () {
       $('.footer').prepend($('<p>').append(createCopyButton($(this).text().trim(),
@@ -95,9 +95,16 @@ function setUpCopyButtons() {
 }
 
 function createCopyButton(copyText, caption) {
-  var $copy = $('<span>').attr({ 'class': 'copy', 'data-clipboard-text': copyText })
-                         .append($('<img>').attr({ 'title': 'Copy the URI to the clipboard',
-                                                   'src': 'images/clipboard.png' }), caption);
-  new ZeroClipboard($copy);
+  var over = function () { $('.hover img').attr('src', 'images/clipboard-hover.png'); },
+      out =  function () { $('.copy  img').attr('src', 'images/clipboard.png'); },
+      $copy = $('<a>').attr({ 'class': 'copy' + (caption ? '' : ' no-caption'),
+                              'title': 'Copy to the clipboard',
+                              'data-clipboard-text': copyText, 'href': 'javascript:;' })
+                      .append($('<img>').attr('src', 'images/clipboard.png'), caption)
+                      .hover(function () { $(this).addClass('hover');   over(); },
+                             function () { $(this).removeClass('hover'); out(); }),
+      clip = new ZeroClipboard($copy);
+  clip.on('mouseover', over);
+  clip.on('mouseout', out);
   return $copy;
 }

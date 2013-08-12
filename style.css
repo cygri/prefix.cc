@@ -11,9 +11,12 @@ a, .copy {
     color: #77f;
     text-decoration: none;
 }
-a:hover {
+a:hover, a.hover {
     color: #ff731e;
-    text-decoration: underline;
+    border-bottom: 1px solid;
+}
+a.no-caption {
+  border-bottom: none !important;
 }
 small {
     font-size: 80%;
@@ -66,7 +69,7 @@ a img {
 }
 .footer a {
     letter-spacing: 0.1em;
-    padding: 0 0.4em;
+    margin: 0 0.4em;
 }
 h2.alternate {
     color: #888;
