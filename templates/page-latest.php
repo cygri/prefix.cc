@@ -5,7 +5,7 @@
       <tbody typeof="owl:Ontology" property="vann:preferredNamespacePrefix" content="<?php e($ns['prefix']); ?>">
         <tr>
           <th class="prefix"><a href="<?php echo htmlspecialchars($base . $ns['prefix']); ?>"><?php echo htmlspecialchars($ns['prefix']); ?>:</a></th>
-          <td class="uri">
+          <td class="uri nocopy">
             <a rel="rdfs:seeAlso" property="vann:preferredNamespaceUri" href="<?php echo htmlspecialchars($ns['uri']); ?>"><?php echo htmlspecialchars($ns['uri']); ?></a>
           </td>
         </tr>

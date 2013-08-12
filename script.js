@@ -82,7 +82,7 @@ function setUpExpansions() {
 
 function setUpCopyButton() {
   ZeroClipboard.setDefaults({ moviePath: "/zeroclipboard.swf", forceHandCursor: true });
-  $('.uri').each(function () {
+  $('.uri:not(.nocopy)').each(function () {
     var $uri = $(this);
     $uri.prepend(createCopyButton($uri.text(), ' '));
   });
