@@ -341,6 +341,10 @@ class Site {
     function action_popular($all = false, $format = null, $plain = false) {
         $this->ensure_valid_format($format);
         $popular_namespaces = $this->namespaces->get_popular($all ? null : 10);
+        if (!$popular_namespaces) {
+            // Happens only on newly initialized size before any lookups
+            $this->response->error(404, array("message" => "There are no popular prefixes."));
+        }
         if ($format) {
             $this->respond_source($popular_namespaces, $format, $plain);
         }
@@ -407,8 +411,8 @@ class Site {
 
     function action_latest($page = 1) {
         $total_pages = $this->namespaces->latest_pages_count(10);
-        // Can't happen if DB is not empty
         if ($total_pages == 0) {
+            // Happens only for empty DB
             $this->response->error(404, array("message" => "There are no latest additions."));
         }
         if (!$page) {

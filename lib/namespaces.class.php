@@ -27,6 +27,7 @@ class Namespaces {
     }
 
     function multi_lookup($prefixes, $fetch_all = false) {
+        if (!$prefixes) return array();
         $query = array();
         $mapping = array();
         $votes = array();
