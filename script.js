@@ -4,7 +4,6 @@ $(document).ready(function() {
     setUpVoteLinks();
     setUpDeclarationForm();
     setUpExpansions();
-    setUpCopyButtons();
 });
 
 function setUpVoteLinks() {
@@ -77,6 +76,7 @@ function setUpExpansions() {
         function() { $(this).attr('src', 'images/vote-down-hover.png'); },
         function() { $(this).attr('src', 'images/vote-down.png'); }
     );
+    setUpCopyButtons();
 }
 
 function setUpCopyButtons() {
@@ -85,11 +85,11 @@ function setUpCopyButtons() {
     $('.uri.copy').each(function () {
       var $uri = $(this);
       $uri.before(createCopyButton($uri.text()), ' ');
-    });
+    }).removeClass('copy');
     $('pre.source.copy').each(function () {
       $('.footer').prepend($('<p>').append(createCopyButton($(this).text().trim(),
                                                             ' Copy this snippet to the clipboard')));
-    });
+    }).removeClass('copy');
   }
 }
 
