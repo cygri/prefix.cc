@@ -1,5 +1,5 @@
       <h2 class="expansion">
-        <span class="uri"><?php e($uri); ?></span><?php e(@$reference); ?>
+        <span class="uri copy"><?php e($uri); ?></span><?php e(@$reference); ?>
         <a class="namespace-link no-caption" href="<?php e($uri . $reference); ?>" rel="nofollow"><img src="images/link.png" alt="link to <?php echo $reference ? 'term' : 'namespace'; ?> URI" title="go to the <?php echo $reference ? 'term' : 'namespace'; ?> URI" /></a>
 <?php if (@$show_vote_links) { ?>
         <span class="toolbox">
