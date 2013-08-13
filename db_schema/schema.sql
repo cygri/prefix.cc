@@ -81,5 +81,6 @@ CREATE TABLE `prefixcc_vote_log` (
   `prefix` varchar(10) NOT NULL,
   `uri` varchar(100) NOT NULL,
   `date` datetime NOT NULL,
-  `ip` varchar(15) NOT NULL
+  `ip` varchar(15) NOT NULL,
+  `up` BOOL NOT NULL DEFAULT '1'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
