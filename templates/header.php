@@ -21,6 +21,7 @@
   <link rev="foaf:homepage" href="about#prefix.cc" />
 <?php } ?>
   <script src="jquery.js" type="text/javascript"></script>
+  <script src="zeroclipboard.js" type="text/javascript"></script>
   <script src="script.js" type="text/javascript"></script>
 </head>
 <body about="<?php e($page_uri); ?>">

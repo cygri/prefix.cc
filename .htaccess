@@ -2,6 +2,7 @@ Header set Access-Control-Allow-Origin "*"
 RewriteEngine On
 RewriteBase /
 RewriteRule ^jquery.js$ vendor/jquery/jquery.js
-RewriteCond %{REQUEST_URI} !/(robots\.txt|style\.css|.*\.js|images/.*)$
+RewriteRule ^zeroclipboard.(\w+)$ vendor/zeroclipboard/zeroclipboard.$1
+RewriteCond %{REQUEST_URI} !/(robots\.txt|style\.css|.*\.js|.*\.swf|images/.*)$
 #RewriteRule .* maintenance.php [L]
 RewriteRule .* index.php

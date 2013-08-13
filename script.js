@@ -76,5 +76,34 @@ function setUpExpansions() {
         function() { $(this).attr('src', 'images/vote-down-hover.png'); },
         function() { $(this).attr('src', 'images/vote-down.png'); }
     );
+    setUpCopyButtons();
 }
 
+function setUpCopyButtons() {
+  if (ZeroClipboard.detectFlashSupport()) {
+    ZeroClipboard.setDefaults({ moviePath: "/zeroclipboard.swf", forceHandCursor: true, hoverClass: 'hover' });
+    $('.uri.copy').each(function () {
+      var $uri = $(this);
+      $uri.before(createCopyButton($uri.text()), ' ');
+    }).removeClass('copy');
+    $('pre.source.copy').each(function () {
+      $('.footer').prepend($('<p>').append(createCopyButton($(this).text().trim(),
+                                                            ' Copy this snippet to the clipboard')));
+    }).removeClass('copy');
+  }
+}
+
+function createCopyButton(copyText, caption) {
+  var over = function () { $('.hover img').attr('src', 'images/clipboard-hover.png'); },
+      out =  function () { $('.clipboard img').attr('src', 'images/clipboard.png'); },
+      $copy = $('<a>').attr({ 'class': 'clipboard' + (caption ? '' : ' no-caption'),
+                              'title': 'Copy to the clipboard',
+                              'data-clipboard-text': copyText, 'href': 'javascript:;' })
+                      .append($('<img>').attr('src', 'images/clipboard.png'), caption)
+                      .hover(function () { $(this).addClass('hover');   over(); },
+                             function () { $(this).removeClass('hover'); out(); }),
+      clip = new ZeroClipboard($copy);
+  clip.on('mouseover', over);
+  clip.on('mouseout', out);
+  return $copy;
+}
