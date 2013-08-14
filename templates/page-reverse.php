@@ -9,7 +9,7 @@
     <p><strong>Examples:</strong><br /><small>
       <a href="reverse?uri=http://xmlns.com/foaf/0.1/"><?php echo $base; ?>reverse?uri=http://xmlns.com/foaf/0.1/</a><br />
       <a href="reverse?uri=http://xmlns.com/foaf/0.1/name"><?php echo $base; ?>reverse?uri=http://xmlns.com/foaf/0.1/name</a><br />
-      <a href="reverse?uri=http://xmlns.com/foaf/0.1/&amp;format=n3"><?php echo $base; ?>reverse?uri=http://xmlns.com/foaf/0.1/&amp;format=n3</a><br />
+      <a href="reverse?uri=http://xmlns.com/foaf/0.1/&amp;format=ttl"><?php echo $base; ?>reverse?uri=http://xmlns.com/foaf/0.1/&amp;format=ttl</a><br />
       <a href="reverse?uri=http%3A%2F%2Frdfs.org%2Fsioc%2Fns%23site"><?php echo $base; ?>reverse?uri=http%3A%2F%2Frdfs.org%2Fsioc%2Fns%23site</a><br />
     </small></p>
     <p>“Bulk lookup” of many URIs in a single request is not supported by the URIs. Please download the <a href="popular/all">entire namespace data</a> and perform bulk operations locally.</p>

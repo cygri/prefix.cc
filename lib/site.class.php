@@ -7,15 +7,15 @@ class Site {
     var $block_time;
 
     var $formats = array(
-        'n3' => array(
-                'lookup' => true,
-                'type' => 'text/rdf+n3;charset=utf-8',
-                'description' => 'N3 prefix declarations',
-        ),
         'ttl' => array(
+                'lookup' => true,
                 'type' => 'text/turtle;charset=utf-8',
-                'template' => 'n3',
-                'description' => 'Turtle prefix declarations (same as <code>n3</code>)',
+                'description' => 'Turtle prefix declarations',
+        ),
+        'n3' => array(
+                'type' => 'text/rdf+n3;charset=utf-8',
+                'template' => 'ttl',
+                'description' => 'N3 prefix declarations (same as <code>ttl</code>)',
         ),
         'rdf' => array(
                 'type' => 'application/rdf+xml',

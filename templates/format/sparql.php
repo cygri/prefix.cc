@@ -6,8 +6,3 @@ foreach ($namespaces as $ns) {
         echo "#PREFIX $ns[prefix]:$ns[padding] <??? not found> .\n";
     }
 } ?>
-
-SELECT *
-WHERE {
-  ?s ?p ?o .
-}
