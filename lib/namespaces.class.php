@@ -26,7 +26,7 @@ class Namespaces {
         return $this->select_list($sql);
     }
 
-    function multi_lookup($prefixes, $fetch_all = false) {
+    function multi_lookup($prefixes, $fetch_all = false, $include_undefined = true) {
         if (!$prefixes) return array();
         $query = array();
         $mapping = array();
@@ -42,11 +42,14 @@ class Namespaces {
         }
         foreach ($this->select_rows($sql) as $row) {
             $p = $row['prefix'];
-            // Check if $p was actually requested, because of $fetch_all
-            if (!in_array($p, $prefixes)) continue;
-            if (!$mapping[$p] || $votes[$p] < $row['votes']) {
+            if (!@$mapping[$p] || $votes[$p] < $row['votes']) {
                 $mapping[$p] = $row['uri'];
                 $votes[$p] = $row['votes'];
+            }
+        }
+        if (!$include_undefined) {
+            foreach ($mapping as $prefix => $uri) {
+                if (!$uri) unset($mapping[$prefix]);
             }
         }
         return $mapping;
@@ -72,7 +75,7 @@ class Namespaces {
             $sql .= sprintf(" LIMIT %u", $limit);
         }
         $prefixes = $this->select_list($sql);
-        return $this->multi_lookup($prefixes, !$limit);
+        return $this->multi_lookup($prefixes, !$limit, false);
     }
 
     function latest_pages_count($per_page = 10) {
