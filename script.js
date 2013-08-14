@@ -96,6 +96,7 @@ function setUpCopyButtons() {
 function createCopyButton(copyText, caption) {
   var over = function () { $('.hover img').attr('src', 'images/clipboard-hover.png'); },
       out =  function () { $('.clipboard img').attr('src', 'images/clipboard.png'); },
+      complete = function () { $('.hover img').attr('src', 'images/clipboard-disabled.png'); },
       $copy = $('<a>').attr({ 'class': 'clipboard' + (caption ? '' : ' no-caption'),
                               'title': 'Copy to the clipboard',
                               'data-clipboard-text': copyText, 'href': 'javascript:;' })
@@ -105,5 +106,6 @@ function createCopyButton(copyText, caption) {
       clip = new ZeroClipboard($copy);
   clip.on('mouseover', over);
   clip.on('mouseout', out);
+  clip.on('complete', complete);
   return $copy;
 }
