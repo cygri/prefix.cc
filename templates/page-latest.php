@@ -21,5 +21,5 @@
       </tbody>
 <?php } ?>
     </table>
-    <p class="feed-link"><a href="latest.rss" title="RSS feed of the latest additions"><img src="images/feed-icon-28x28.png" alt="RSS feed" /></a></p>
+    <p class="feed-link"><a href="latest.rss" class="no-caption" title="RSS feed of the latest additions"><img src="images/feed-icon-28x28.png" alt="RSS feed" /></a></p>
   </div>
