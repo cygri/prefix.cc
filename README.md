@@ -33,6 +33,6 @@ operated by Richard Cyganiak ([richard@cyganiak.de](mailto:richard@cyganiak.de),
 
 7. Import prefixes from the public prefix.cc site:
 
-        php scripts/import.php prefix.cc
+        php tools/csv-import.php http://prefix.cc/popular/all.file.csv | mysql -u root prefixcc
 
 8. Go to [http://prefixcc.local/](http://prefixcc.local/) and you should have a functional site!
