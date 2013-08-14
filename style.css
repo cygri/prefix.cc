@@ -7,7 +7,7 @@ body {
     margin: 1em 10%;
     text-align: center;
 }
-a, .copy {
+a {
     color: #77f;
     text-decoration: none;
 }
