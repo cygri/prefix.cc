@@ -15,8 +15,8 @@ a:hover, a.hover {
     color: #ff731e;
     border-bottom: 1px solid;
 }
-a.no-caption:hover {
-  border-bottom: none;
+a.no-caption {
+  border-bottom: none !important;
 }
 small {
     font-size: 80%;
