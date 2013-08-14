@@ -504,6 +504,9 @@ class Site {
             $message = "The prefix “" . $prefix . "” is not in our database. " . 
                     ($this->user_is_blocked('add', true) ? "You can add it tomorrow." : "You can add it.");
         }
+        $links = $this->get_format_links($prefix);
+        $links[] = '|';
+        $links["http://lov.okfn.org/dataset/lov/details/vocabulary_$prefix.html"] = 'lov';
         $options = array(
                 'title' => $prefix . ((strlen($reference) > 0) ? ":$reference" : ''),
                 'prefix' => $prefix,
@@ -512,7 +515,7 @@ class Site {
                 'message' => @$message,
                 'show_form' => !$this->user_is_blocked('add', true),
                 'show_vote_links' => !$this->user_is_blocked('vote', true),
-                'links' => $this->get_format_links($prefix),
+                'links' => $links
         );
         $this->response->render("lookup-term", $options);
         die();
