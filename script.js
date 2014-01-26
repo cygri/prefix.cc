@@ -84,7 +84,7 @@ function setUpCopyButtons() {
     ZeroClipboard.setDefaults({ moviePath: "/zeroclipboard.swf", forceHandCursor: true, hoverClass: 'hover' });
     $('.uri.copy').each(function () {
       var $uri = $(this);
-      $uri.before(createCopyButton($uri.text()), ' ');
+      $uri.before(createCopyButton($uri.text() + $uri.next('.term').text()), ' ');
     }).removeClass('copy');
     $('pre.source.copy').each(function () {
       $('.footer').prepend($('<p>').append(createCopyButton($(this).text().trim(),
