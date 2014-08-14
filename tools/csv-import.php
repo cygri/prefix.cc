@@ -57,7 +57,7 @@ foreach ($lines as $i => $line) {
   if ($uri == '') continue;
   $valid = true;
   if (!$namespaces->is_valid_prefix_syntax($prefix)) {
-    echo "Invalid prefix: '$prefx' (line $line_number)\n";
+    echo "Invalid prefix: '$prefix' (line $line_number)\n";
     $valid = false;
   }
   if (!$namespaces->is_valid_namespace_URI($uri)) {
