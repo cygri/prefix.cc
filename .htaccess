@@ -1,6 +1,11 @@
 Header set Access-Control-Allow-Origin "*"
 RewriteEngine On
 RewriteBase /
+
+# Remove initial www. from host name
+RewriteCond %{HTTP_HOST} ^www\.(.+)$
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
 RewriteRule ^jquery.js$ vendor/jquery/jquery.js
 RewriteRule ^zeroclipboard.(\w+)$ vendor/zeroclipboard/zeroclipboard.$1
 RewriteCond %{REQUEST_URI} !/(robots\.txt|style\.css|.*\.js|.*\.swf|images/.*)$
