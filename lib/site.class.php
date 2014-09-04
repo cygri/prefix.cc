@@ -65,12 +65,19 @@ class Site {
                 'template' => 'json',
                 'description' => 'Same as <code>json</code>',
         ),
+        'jsonld' => array(
+                'lookup' => true,
+                'bulk' => true,
+                'type' => 'application/ld+json',
+                'template' => 'jsonld',
+                'description' => 'JSON-LD Context',
+        ),
         'ini' => array(
                 'bulk' => true,
                 'description' => 'INI file (key=value)',
         ),
         'vann' => array(
-                'lookup' => true,  
+                'lookup' => true,
                 'bulk' => true,
                 'type' => 'application/rdf+xml',
                 'description' => 'RDF/XML data, using the VANN vocabulary',
@@ -451,7 +458,7 @@ class Site {
             $longest = max($longest, strlen($prefix));
         }
         foreach ($namespaces as $key => $namespace) {
-            $namespaces[$key]['padding'] = 
+            $namespaces[$key]['padding'] =
                     str_repeat(' ', $longest - strlen($namespace['prefix']));
         }
         if (isset($this->formats[$format]['template'])) {
@@ -501,7 +508,7 @@ class Site {
     function respond_termpage($prefix, $reference, $uris) {
         if (!$uris) {
             $this->response->status(404);
-            $message = "The prefix “" . $prefix . "” is not in our database. " . 
+            $message = "The prefix “" . $prefix . "” is not in our database. " .
                     ($this->user_is_blocked('add', true) ? "You can add it tomorrow." : "You can add it.");
         }
         $links = $this->get_format_links($prefix);
