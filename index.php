@@ -45,6 +45,9 @@ if ($q = $request->matches('/^(robots|favicon)/')) {
 } else if ($q = $request->matches("/^popular(\/all)?(\.$extensions_regex)?$/")) {
     $request->enforce_get();
     $site->action_popular(!empty($q[1]), @$q[3] . @$q[6], !empty($q[4]) || !empty($q[5]));
+} else if ($q = $request->matches("/^context(\.$extensions_regex)?$/", $q)) {
+    $request->enforce_get();
+    $site->action_popular(true, @$q[2] ? $q[2] : 'jsonld', true);
 } else if ($q = $request->matches("/^latest(\/([0-9]+))?$/")) {
     $request->enforce_get();
     $site->action_latest(@$q[2]);
