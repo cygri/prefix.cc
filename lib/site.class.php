@@ -169,6 +169,14 @@ class Site {
         $this->response->render("page-api", $options);
     }
 
+    function action_about_jsonld() {
+        $options = array(
+                "title" => "JSON-LD context",
+                "links" => $this->get_default_links(),
+        );
+        $this->response->render("page-json-ld", $options);
+    }
+
     function action_about_google() {
         $options = array(
                 "title" => "google subscription",
