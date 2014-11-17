@@ -114,6 +114,7 @@ class Site {
                 'popular' => array('popular', 'rel' => 'rdfs:seeAlso'),
                 'latest' => array('latest', 'rel' => 'rdfs:seeAlso'),
                 'about' => array('about', 'rel' => 'rdfs:seeAlso'),
+                'json-ld context' => array('context', 'rel' => 'rdfs:seeAlso')
         );
     }
 
