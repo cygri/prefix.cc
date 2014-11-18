@@ -138,7 +138,11 @@ class Site {
                         "rdfs,dc,foaf,geo.sparql" => "rdfs,dc,foaf,geo.sparql",
                         "?q=http://xmlns.com/foaf/0.1/name" => "http://xmlns.com/foaf/0.1/name",
                 ),
-                "links" => $this->get_default_links(),
+                "links" => array_merge(
+                        $this->get_default_links(),
+                        array("about/json-ld" => array('json-ld',
+                                'rel' => 'rdfs:seeAlso'))
+                ),
         );
         $this->response->render("page-home", $options);
     }
