@@ -133,10 +133,17 @@ class Namespaces {
     }
 
     function is_valid_namespace_URI($uri) {
+        $protocol = "https?";
         // Not sure if this is quite correct. At least one alphanumeric
         // character, must start and end alphanumeric, might contain dash
-        $domainpart = "([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)";
-        return preg_match("!^https?://$domainpart(\.$domainpart)+(:[0-9]+)?/([\!$&'()*+,;=._~?/:@%0-9a-zA-Z-]*[/#:])?$!", $uri);
+        $subdomain = "([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)";
+        $host = "$subdomain(\.$subdomain)+";
+        $port = "[0-9]+";
+        $percent_encoded = "%[0123456789ABCDEF][0123456789ABCDEF]";
+        // We're quite permissive here with the general delimiters,
+        // and require that it ends in a "typical" namespace character
+        $path = "([-a-zA-Z0-9._~:/?#\[\]@\!$&'()*+,;=]|$percent_encoded)*[/#:]";
+        return preg_match("!^$protocol://$host(:$port)?/($path)?$!", $uri);
     }
 
     function get_prefix_regex() {
