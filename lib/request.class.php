@@ -5,7 +5,7 @@ class Request {
     var $path;
 
     function __construct() {
-        $uri = substr($_SERVER['REQUEST_URI'], 1);
+        $uri = rawurldecode(substr($_SERVER['REQUEST_URI'], 1));
         $this->uri = $uri;
         preg_match('/([^\?]*)(\?.*)?$/', $uri, $match);
         $this->path = $match[1];

@@ -133,17 +133,24 @@ class Namespaces {
     }
 
     function is_valid_namespace_URI($uri) {
-        $protocol = "https?";
+        // A poor man's approximation of ucschar from RFC 3987:
+        // https://tools.ietf.org/html/rfc3987#section-2.2
+        $ucsrange = "\x{A0}-\x{EFFFD}";
+        $ucschar = "[$ucsrange]";
+
         // Not sure if this is quite correct. At least one alphanumeric
         // character, must start and end alphanumeric, might contain dash
-        $subdomain = "([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)";
+        $subdomain = "([a-zA-Z0-9$ucsrange]([a-zA-Z0-9$ucsrange-]*[a-zA-Z0-9$ucsrange])?)";
         $host = "$subdomain(\.$subdomain)+";
         $port = "[0-9]+";
+
         $percent_encoded = "%[0123456789ABCDEF][0123456789ABCDEF]";
         // We're quite permissive here with the general delimiters,
         // and require that it ends in a "typical" namespace character
-        $path = "([-a-zA-Z0-9._~:/?#\[\]@\!$&'()*+,;=]|$percent_encoded)*[/#:]";
-        return preg_match("!^$protocol://$host(:$port)?/($path)?$!", $uri);
+        $path = "([-a-zA-Z0-9._~:/?#\[\]@\!$&'()*+,;=]|$percent_encoded|$ucschar)*[/#:]";
+
+        $protocol = "https?";
+        return preg_match("!^$protocol://$host(:$port)?/($path)?$!u", $uri) == 1;
     }
 
     function get_prefix_regex() {
