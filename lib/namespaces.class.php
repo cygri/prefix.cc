@@ -237,7 +237,7 @@ class Namespaces {
     function connect() {
         $this->_conn = @new mysqli($this->db_host, $this->db_user, $this->db_password, $this->db_name);
         if (mysqli_connect_errno()) {
-            throw new DatabaseException(mysqli_connect_error());
+            throw new DatabaseException("DB connection failed: " . mysqli_connect_error());
         }
     }
 }
