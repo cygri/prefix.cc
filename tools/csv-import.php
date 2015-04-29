@@ -40,6 +40,9 @@ $lines = @file($filename);
 if (!$lines) {
   die("Not found or empty: $filename\n");
 }
+if (count($lines) == 1) {
+  die("Input file contains only one line; probably wrong type of line endings?");
+}
 $namespaces = new Namespaces($config);
 $mappings = array();
 $prefixes = array();
