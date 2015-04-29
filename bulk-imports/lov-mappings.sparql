@@ -1,0 +1,13 @@
+PREFIX vann: <http://purl.org/vocab/vann/>
+SELECT ?prefix ?URI
+FROM <http://prefix.cc/popular/all.file.vann> {
+  SERVICE <http://lov.okfn.org/endpoint/lov> {
+    SELECT ?prefix ?URI {
+      [] vann:preferredNamespacePrefix ?prefix;
+        vann:preferredNamespaceUri ?URI;
+    }
+  }
+  FILTER(NOT EXISTS { [] vann:preferredNamespaceUri ?URI })
+  FILTER(NOT EXISTS { [] vann:preferredNamespacePrefix ?prefix })
+}
+ORDER BY ?prefix

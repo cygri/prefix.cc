@@ -1,0 +1,45 @@
+# Mappings for insertion into the prefix.cc database
+# Generated on 2013-03-04 from lov-mappings.csv
+# To check for existing mappings: http://prefix.cc/gastro,gnm,inno,iol,itsmo,lmm1,lmm2,lsc,meb,moac,msr,mvco,obsm,odapp,odpart,odv,oecc,ontopic,ordf,osgeom,ostop,passim,pso,ptop,pwo,quty,raul,rdafrbr,rdag3,semio,seq,snarm,spt,swpo,tao,te,tis,trait,turismo,tvc,vrank,wsl
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('gastro', 'http://www.ebsemantics.net/gastro#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('gnm', 'http://www.geonames.org/ontology/mappings/', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('inno', 'http://purl.org/innovation/ns#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('iol', 'http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('itsmo', 'http://ontology.it/itsmo/v1#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('lmm1', 'http://www.ontologydesignpatterns.org/ont/lmm/LMM_L1.owl#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('lmm2', 'http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('lsc', 'http://linkedscience.org/lsc/ns#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('meb', 'http://rdf.myexperiment.org/ontologies/base/', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('moac', 'http://observedchange.com/moac/ns#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('msr', 'http://www.telegraphis.net/ontology/measurement/measurement#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('mvco', 'http://purl.oclc.org/NET/mvco.owl#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('obsm', 'http://rdf.geospecies.org/methods/observationMethod#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('odapp', 'http://vocab.deri.ie/odapp#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('odpart', 'http://www.ontologydesignpatterns.org/cp/owl/participation.owl#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('odv', 'http://reference.data.gov.uk/def/organogram/', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('oecc', 'http://www.oegov.org/core/owl/cc#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('ontopic', 'http://www.ontologydesignpatterns.org/ont/dul/ontopic.owl#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('ordf', 'http://purl.org/NET/ordf/', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('osgeom', 'http://data.ordnancesurvey.co.uk/ontology/geometry/', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('ostop', 'http://www.ordnancesurvey.co.uk/ontology/Topography/v0.1/Topography.owl#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('passim', 'http://data.lirmm.fr/ontologies/passim#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('pso', 'http://purl.org/spar/pso/', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('ptop', 'http://www.ontotext.com/proton/protontop#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('pwo', 'http://purl.org/spar/pwo/', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('quty', 'http://www.telegraphis.net/ontology/measurement/quantity#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('raul', 'http://vocab.deri.ie/raul#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('rdafrbr', 'http://rdvocab.info/uri/schema/FRBRentitiesRDA/', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('rdag3', 'http://rdvocab.info/ElementsGr3/', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('semio', 'http://www.lingvoj.org/semio#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('seq', 'http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('snarm', 'http://rdf.myexperiment.org/ontologies/snarm/', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('spt', 'http://spitfire-project.eu/ontology/ns/', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('swpo', 'http://sw-portal.deri.org/ontologies/swportal#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('tao', 'http://vocab.deri.ie/tao#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('te', 'http://www.w3.org/2006/time-entry#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('tis', 'http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('trait', 'http://contextus.net/ontology/ontomedia/ext/common/trait#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('turismo', 'http://idi.fundacionctic.org/cruzar/turismo#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('tvc', 'http://www.essepuntato.it/2012/04/tvc/', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('vrank', 'http://purl.org/voc/vrank#', NOW(), '127.0.0.1', 5, 0);
+INSERT INTO prefixcc_namespaces (prefix, uri, date, ip, upvotes, downvotes) VALUES ('wsl', 'http://www.wsmo.org/ns/wsmo-lite#', NOW(), '127.0.0.1', 5, 0);
