@@ -41,6 +41,16 @@ to initialise the site on day 1.)
 - Processing: Converted from txt to CSV by Richard
 - Status: Imported into prefix.cc live site via csv-import.php
 
+## lov-mappings-20140814.csv
+
+- Creator: Ghislain Atemezing <ghislain.atemezing@mondeca.com>
+- Date: 2014-08-14
+- Source: Ghislain sent this to Richard back in May. It took Richard
+  until August to act upon it. Ghislain removed some mappings that were
+  invalid in prefix.cc and sent the file as `lov-mappings_new.csv`.
+- Processing: Richard changed line breaks to Unix style
+- Status: Imported into prefix.cc live site via csv-import.php
+
 ## lov-mappings-20150422.csv
 
 - Creator: Ghislain Atemezing <ghislain.atemezing@mondeca.com>
