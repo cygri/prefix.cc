@@ -24,6 +24,7 @@ $namespace_URI_tests = array(
     'http://prefix.cc/path/' => true,
     'http://prefix.cc/path:' => true,
     'http://prefix.cc/path#' => true,
+    'http://prefix.cc/path=' => true,
     'http://prefix.cc/path' => false,
     'http://prefix.cc/path.' => false,
     'http://prefix.cc/path$' => false,
