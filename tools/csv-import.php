@@ -48,6 +48,7 @@ $mappings = array();
 $prefixes = array();
 $total_invalid = 0;
 foreach ($lines as $i => $line) {
+  if (!trim($line)) continue; // Skip empty lines
   $line_number = $i + 1;
   if ($line_number == 1) continue;  // Skip header
   $parsed = str_getcsv($line);
