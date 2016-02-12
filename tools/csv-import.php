@@ -83,7 +83,7 @@ $lookup_url = "http://prefix.cc/" . join($prefixes, ",");
 @date_default_timezone_set(@date_default_timezone_get());
 $date = date("Y-m-d");
 echo "# Mappings for insertion into the prefix.cc database\n";
-echo "# Generated on $date from $filename\n";
+echo "# " . count($mappings) . " mappings generated on $date from $filename\n";
 echo "# To check for existing mappings: $lookup_url\n";
 foreach ($mappings as $mapping) {
   // TODO: Refactor so that this uses the same SQL command as in Namespaces::add_declaration
