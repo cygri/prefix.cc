@@ -2,13 +2,18 @@
 # in prefix.cc, and the prefix is unassigned in prefix.cc.
 # Run with Jena: sparql --query lov-mappings.sparql --results csv > out.csv
 # Then import with csv-import.php
+# [update] Added the named graph in the query with the version 3 of LOV
+
 PREFIX vann: <http://purl.org/vocab/vann/>
 SELECT ?prefix ?URI
 FROM <http://prefix.cc/popular/all.file.vann> {
-  SERVICE <http://lov.okfn.org/endpoint/lov> {
-    SELECT ?prefix ?URI {
-      [] vann:preferredNamespacePrefix ?prefix;
-        vann:preferredNamespaceUri ?URI;
+  SERVICE <http://lov.okfn.org/dataset/lov/sparql> {
+    SELECT DISTINCT ?prefix ?URI {
+    	GRAPH <http://lov.okfn.org/dataset/lov> {
+    		[] vann:preferredNamespacePrefix ?prefix;
+        vann:preferredNamespaceUri ?URI.
+    }
+      
     }
   }
   FILTER(NOT EXISTS { [] vann:preferredNamespaceUri ?URI })
