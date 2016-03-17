@@ -8,6 +8,6 @@ RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 RewriteRule ^jquery.js$ vendor/jquery/jquery.js
 RewriteRule ^zeroclipboard.(\w+)$ vendor/zeroclipboard/zeroclipboard.$1
-RewriteCond %{REQUEST_URI} !/(robots\.txt|style\.css|.*\.js|.*\.swf|images/.*)$
+RewriteCond %{REQUEST_URI} !/(phpinfo\.php|robots\.txt|style\.css|.*\.js|.*\.swf|images/.*)$
 #RewriteRule .* maintenance.php [L]
 RewriteRule .* index.php
