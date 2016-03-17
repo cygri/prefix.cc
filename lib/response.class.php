@@ -24,7 +24,9 @@ class Response {
     );
 
     function __construct($base, $page_uri) {
-        $this->base = $base;
+        $protocol = (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == 'off')
+                ? 'http' : 'https';
+        $this->base = "$protocol:$base";
         $this->page_uri = $page_uri;
     }
 

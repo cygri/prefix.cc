@@ -2,8 +2,9 @@
 
 error_reporting(E_ALL);
 $config = array(
-    'site_base' => 'http://prefixcc.local/',  // for local development
-//    'site_base' => 'http://prefix.cc/',   // for production
+    // Without protocol, to allow for either http or https
+    'site_base' => '//prefixcc.local/',  // for local development
+//    'site_base' => '//prefix.cc/',   // for production
     'block_time' => 60, // seconds -- this is for local development
 //    'block_time' => 60 * 60 * 16, // seconds -- this is for production
     'db_host' => 'localhost',
