@@ -61,3 +61,11 @@ to initialise the site on day 1.)
   valid in prefix.cc.
 - Processing: Richard changed line breaks to Unix style
 - Status: Imported into prefix.cc live site via csv-import.php
+
+## lov-mappings-20190526.csv
+
+- Creator: Ghislain Atemezing <ghislain.atemezing@mondeca.com>
+- Date: 2019-05-26
+- Source: Ghislain sent this to Richard in an effort to get prefix.cc
+  updated with the latest additions to LOV.
+- Processing: Richard changed line breaks to Unix style
