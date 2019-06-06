@@ -7,7 +7,7 @@ operated by Richard Cyganiak ([richard@cyganiak.de](mailto:richard@cyganiak.de),
 ## Requirements
 
 * Apache with `mod_rewrite` enabled
-* PHP
+* PHP (recommended version: 7.2)
 * MySQL
 
 
