@@ -222,7 +222,7 @@ class Site {
         }
         if (!$this->namespaces->is_valid_namespace_URI($expansion)) {
             $this->namespaces->log_rejected_URI($prefix, $expansion, 'uri-syntax');
-            $this->response->error(400, array('plaintext' => "URI must start with http:// or https://, end in one of / : = #."));
+            $this->response->error(400, array('plaintext' => "URI must start with http:// or https://, end in one of / : = _ #."));
         }
         if ($this->namespaces->mapping_exists($prefix, $expansion)) {
             $this->response->error(400, array('plaintext' => "This mapping already exists."));
@@ -326,7 +326,7 @@ class Site {
         $prefix = null;
         // On search for http://example.com/ns, check whether
         // http://example.com/ns# is defined
-        if (!preg_match('![/#:]$!', $uri)) {
+        if (!preg_match('![/#:=_]$!', $uri)) {
             $with_hash = "$uri#";
             $prefix = $this->namespaces->reverse_lookup($with_hash);
             if ($prefix) {
@@ -337,7 +337,7 @@ class Site {
         // Split http://example.com/ns#something into
         // "http://example.com/ns#" and (potentially empty) "something"
         if (!$prefix) {
-            if (!preg_match('!^(.*?)([^/#:]*)$!', $uri, $match)) {
+            if (!preg_match('!^(.*?)([^/#:=_]*)$!', $uri, $match)) {
                 $this->response->error(404);
             }
             $uri = $match[1];
