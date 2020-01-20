@@ -224,6 +224,11 @@ class Site {
             $this->namespaces->log_rejected_URI($prefix, $expansion, 'uri-syntax');
             $this->response->error(400, array('plaintext' => "URI must start with http:// or https://, end in one of / : = #."));
         }
+        if (!$this->namespaces->is_valid_namespace_length($expansion)) {
+            $this->namespaces->log_rejected_URI($prefix, $expansion, 'uri-length');
+            $this->response->error(400, array('plaintext' =>
+                    'URI must not be longer than ' . $this->namespaces->max_URI_length . ' characters.'));
+        }
         if ($this->namespaces->mapping_exists($prefix, $expansion)) {
             $this->response->error(400, array('plaintext' => "This mapping already exists."));
         }

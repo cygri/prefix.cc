@@ -6,6 +6,7 @@ class Namespaces {
     var $db_password;
     var $db_name;
     var $block_time;    // in seconds
+    var $max_URI_length = 100;
 
     function __construct($config) {
         $this->db_host = $config['db_host'];
@@ -153,6 +154,10 @@ class Namespaces {
         return preg_match("!^$protocol://$host(:$port)?/($path)?$!u", $uri) == 1;
     }
 
+    function is_valid_namespace_length($uri) {
+        return mb_strlen($uri) <= $this->max_URI_length;
+    }
+
     function get_prefix_regex() {
         return "[a-z][a-z0-9]{1,9}";
     }
@@ -174,6 +179,9 @@ class Namespaces {
     function add_declaration($prefix, $uri) {
         if (!$this->is_valid_prefix_syntax($prefix)) {
             throw new Exception("not a valid prefix: '$prefix'");
+        }
+        if (!$this->is_valid_namespace_length($uri)) {
+            throw new Exception("URI must not be longer than $this->max_URI_length characters");
         }
         if (!$this->is_valid_namespace_URI($uri)) {
             throw new Exception("not a valid namespace URI: '$uri'");
