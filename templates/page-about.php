@@ -14,6 +14,6 @@
       <li><a href="about/api">Namespace lookup API</a></li>
       <li><a href="reverse">Reverse lookup API</a></li>
       <li><a href="about/json-ld">JSON-LD context</a></li>
-      <li><a href="about/google">Google custom search result subscription</a></li>
+      <li><a href="about/users">Tools using the API</a></li>
     </ul>
   </div>

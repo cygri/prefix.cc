@@ -189,6 +189,14 @@ class Site {
         $this->response->render("page-google", $options);
     }
 
+    function action_about_users() {
+        $options = array(
+                "title" => "tools using the prefix.cc API",
+                "links" => $this->get_default_links(),
+        );
+        $this->response->render("page-users", $options);
+    }
+
     function action_page_reverse() {
         $options = array(
                 "title" => "reverse lookup API",

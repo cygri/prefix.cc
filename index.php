@@ -39,6 +39,9 @@ if ($q = $request->matches('/^(robots|favicon)/')) {
 } else if ($q = $request->matches('/^about\/google$/')) {
     $request->enforce_get();
     $site->action_about_google();
+} else if ($q = $request->matches('/^about\/users$/')) {
+    $request->enforce_get();
+    $site->action_about_users();
 } else if ($q = $request->matches('/^about\/api$/')) {
     $request->enforce_get();
     $site->action_about_api();
