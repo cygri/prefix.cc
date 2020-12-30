@@ -148,7 +148,7 @@ class Namespaces {
         $percent_encoded = "%[0123456789ABCDEF][0123456789ABCDEF]";
         // We're quite permissive here with the general delimiters,
         // and require that it ends in a "typical" namespace character
-        $path = "([-a-zA-Z0-9._~:/?#\[\]@\!$&'()*+,;=]|$percent_encoded|$ucschar)*[/#:=]";
+        $path = "([-a-zA-Z0-9._~:/?#\[\]@\!$&'()*+,;=]|$percent_encoded|$ucschar)*[/#:=_]";
 
         $protocol = "https?";
         return preg_match("!^$protocol://$host(:$port)?/($path)?$!u", $uri) == 1;
