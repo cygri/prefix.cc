@@ -538,7 +538,7 @@ class Site {
         }
         $links = $this->get_format_links($prefix);
         $links[] = '|';
-        $links["http://lov.okfn.org/dataset/lov/details/vocabulary_$prefix.html"] = 'lov';
+        $links["https://lov.linkeddata.es/dataset/lov/vocabs/$prefix"] = 'lov';
         $options = array(
                 'title' => $prefix . ((strlen($reference) > 0) ? ":$reference" : ''),
                 'prefix' => $prefix,
