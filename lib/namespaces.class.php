@@ -159,7 +159,7 @@ class Namespaces {
     }
 
     function get_prefix_regex() {
-        return "[a-z][a-z0-9]{1,9}";
+        return "[a-z][a-z0-9]{1,9}(?:_[a-z0-9]{1,7})?";
     }
 
     function is_valid_prefix_syntax($prefix) {
