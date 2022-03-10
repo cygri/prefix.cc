@@ -4,5 +4,6 @@
     <ul>
       <li><a href="https://github.com/TriplyDB/Yasgui">YASGUI</a> Yet Another SPARQL GUI</li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=umutsims.prefix-cc">prefix.cc extension for Visual Studio Code</a> by Umutcan Şimşek</li>
+      <li><a href="https://github.com/biopragmatics/bioregistry">The Bioregistry</a></li>
     </ul>
   </div>
